@@ -1,0 +1,56 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By      
+from time import sleep
+
+driver = webdriver.Chrome()
+driver.get("https://automationexercise.com/login")
+driver.maximize_window()
+sleep(3)
+
+def login():
+    # Correcting the XPath locators by fixing the quotes
+    driver.find_element(By.XPATH, "//*[@id='form']/div/div/div[3]/div/form/input[2]").send_keys("vihaan barupal")
+    sleep(3)
+    driver.find_element(By.XPATH, "//*[@id='form']/div/div/div[3]/div/form/input[3]").send_keys("dineshkumar5apd@gmail.com")
+    sleep(3)
+    driver.find_element(By.XPATH, "//*[@id='form']/div/div/div[3]/div/form/button").click()
+    sleep(8)
+
+login()
+def next_page():
+    driver.find_element(By.XPATH, '//*[@id="id_gender1"]').click()
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="password"]').send_keys("Asdf@6377781395")
+    sleep(2)
+    driver.find_element(By.XPATH, '//*[@id="days"]').send_keys("2")
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="months"]').send_keys("December")
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="years"]').send_keys("2005")
+    sleep(2)
+    driver.find_element(By.XPATH, '//*[@id="newsletter"]').click()
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="optin"]').click()
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="first_name"]').send_keys("vihaan")
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="last_name"]').send_keys("barupal")
+    sleep(3)
+    driver.find_element(By.XPATH,  '//*[@id="company"]').send_keys("aliens.company")
+    sleep(3)
+    driver.find_element(By.XPATH,  '//*[@id="address1"]').send_keys("5apd(b),srivijaynagar")
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="address2"]').send_keys("sriganganagar,rajasthan,335701")
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="country"]').send_keys("India")
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="state"]').send_keys("rajsthan")
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="city"]').send_keys("sriganganagar")
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="zipcode"]').send_keys("335701")  
+    sleep(3)
+    driver.find_element(By.XPATH, '//*[@id="mobile_number"]').send_keys("6377781395")
+next_page()
+
+sleep(10)
